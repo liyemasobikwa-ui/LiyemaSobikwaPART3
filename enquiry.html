@@ -6,10 +6,13 @@
     <title>Crown & Glory | Send an Enquiry</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<script src="js/script.js"></script>
 <body>
+
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">CROWN & <span>GLORY</span></a>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -21,79 +24,119 @@
     </nav>
 
     <div class="container">
-        <div style="text-align: center; margin: 4rem 0 2rem 0;">
+
+        <div style="text-align:center; margin:4rem 0 2rem;">
             <h1>Send an Enquiry</h1>
             <div class="divider"></div>
-            <p style="max-width: 600px; margin: 1rem auto 0;">Fill out the form below. We will reply within 24 hours.</p>
+            <p style="max-width:600px; margin:1rem auto 0;">
+                Fill out the form below and we'll get back to you within 24 hours.
+            </p>
         </div>
-        
+
         <div class="form-container">
-            <form action="#" method="POST">
+
+            <form id="enquiryForm">
+
                 <div class="form-group">
                     <label for="name">Your Name *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone">
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="wig-type">Which wig are you interested in? *</label>
+                    <label for="wig-type">Which Wig Are You Interested In? *</label>
                     <select id="wig-type" name="wig-type" required>
-                        <option value="">Choose one</option>
-                        <option value="lace-front">Lace Front Wig</option>
-                        <option value="full-lace">Full Lace Wig</option>
-                        <option value="synthetic">Synthetic Wig</option>
-                        <option value="human-hair">Human Hair Wig</option>
-                        <option value="custom">Custom Order</option>
+                        <option value="">Choose One</option>
+                        <option value="Lace Front Wig">Lace Front Wig</option>
+                        <option value="Full Lace Wig">Full Lace Wig</option>
+                        <option value="Synthetic Wig">Synthetic Wig</option>
+                        <option value="Human Hair Wig">Human Hair Wig</option>
+                        <option value="Custom Order">Custom Order</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="colour">Color Preference</label>
-                    <input type="text" id="colour" name="colour" placeholder="e.g., Black, Blonde, Brown">
+                    <label for="colour">Colour Preference</label>
+                    <input
+                        type="text"
+                        id="colour"
+                        name="colour"
+                        placeholder="e.g. Black, Blonde, Brown"
+                    >
                 </div>
-                
+
                 <div class="form-group">
                     <label for="budget">Your Budget</label>
                     <select id="budget" name="budget">
-                        <option value="">Select budget range</option>
-                        <option value="under-500">Under R500</option>
-                        <option value="500-1000">R500 - R1,000</option>
-                        <option value="1000-2000">R1,000 - R2,000</option>
-                        <option value="2000-4000">R2,000 - R4,000</option>
-                        <option value="4000+">R4,000 and above</option>
+                        <option value="">Select Budget Range</option>
+                        <option value="Under R500">Under R500</option>
+                        <option value="R500 - R1,000">R500 - R1,000</option>
+                        <option value="R1,000 - R2,000">R1,000 - R2,000</option>
+                        <option value="R2,000 - R4,000">R2,000 - R4,000</option>
+                        <option value="R4,000+">R4,000 and Above</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="message">Tell us more *</label>
-                    <textarea id="message" name="message" placeholder="What style do you like? Do you have any questions?"></textarea>
+                    <label for="message">Tell Us More *</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                        placeholder="What style do you like? Do you have any questions?"
+                    ></textarea>
                 </div>
-                
-                <button type="submit" class="btn-primary" style="width: 100%;">Send Enquiry →</button>
+
+                <button
+                    type="submit"
+                    class="btn-primary"
+                    style="width:100%;"
+                >
+                    Send Enquiry →
+                </button>
+
             </form>
+
         </div>
-        
-        <div style="text-align: center; margin: 2rem 0 4rem;">
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">Want a faster reply?</p>
-            <a href="#" class="btn-outline-gold" style="margin-top: 0.5rem;">💬 Send WhatsApp Message</a>
+
+        <div style="text-align:center; margin:2rem 0 4rem;">
+            <p style="font-size:1.1rem;">
+                Want a faster reply?
+            </p>
+
+            <a
+                href="https://wa.me/27609889853"
+                class="btn-outline-gold"
+                target="_blank"
+            >
+                💬 Send WhatsApp Message
+            </a>
         </div>
+
     </div>
 
     <footer class="footer">
+
         <div class="footer-content">
+
             <div class="footer-section">
                 <h4>CROWN & GLORY</h4>
-                <p>Quality wigs made with care. We help you feel confident and beautiful.</p>
+                <p>
+                    Quality wigs made with care. We help you feel
+                    confident and beautiful.
+                </p>
             </div>
+
             <div class="footer-section">
                 <h4>QUICK LINKS</h4>
                 <a href="about.html">About Us</a>
@@ -101,16 +144,87 @@
                 <a href="enquiry.html">Send Enquiry</a>
                 <a href="contact.html">Contact Us</a>
             </div>
+
             <div class="footer-section">
                 <h4>CONNECT WITH US</h4>
                 <a href="#">📷 Instagram @crownandglorywigs</a>
-                <a href="#">💬 WhatsApp: +27 60 988 9853</a>
-                <a href="#">📧 info@crownandglorywigs.co.za</a>
+                <a href="https://wa.me/27609889853">
+                    💬 WhatsApp: +27 60 988 9853
+                </a>
+                <a href="mailto:info@crownandglorywigs.co.za">
+                    📧 info@crownandglorywigs.co.za
+                </a>
             </div>
+
         </div>
+
         <div class="footer-bottom">
             <p>&copy; 2024 Crown & Glory Wigs. All rights reserved.</p>
         </div>
+
     </footer>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        emailjs.init("ATC50Ve4GpvyRO9HK");
+
+        document
+            .getElementById("enquiryForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const button =
+                    document.querySelector("button[type='submit']");
+
+                button.innerHTML = "Sending...";
+                button.disabled = true;
+
+                const templateParams = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    phone: document.getElementById("phone").value,
+                    wig_type: document.getElementById("wig-type").value,
+                    colour: document.getElementById("colour").value,
+                    budget: document.getElementById("budget").value,
+                    message: document.getElementById("message").value
+                };
+
+                emailjs.send(
+                    "service_puapygu",
+                    "template_1nshcuh",
+                    templateParams
+                )
+                .then(function() {
+
+                    alert(
+                        "Thank you! Your enquiry has been sent successfully."
+                    );
+
+                    document
+                        .getElementById("enquiryForm")
+                        .reset();
+
+                    button.innerHTML = "Send Enquiry →";
+                    button.disabled = false;
+
+                })
+                .catch(function(error) {
+
+                    console.error(error);
+
+                    alert(
+                        "Failed to send enquiry. Please try again."
+                    );
+
+                    button.innerHTML = "Send Enquiry →";
+                    button.disabled = false;
+                });
+
+            });
+    </script>
+
 </body>
 </html>
