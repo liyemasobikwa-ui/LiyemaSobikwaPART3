@@ -1,109 +1,90 @@
-ocument.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // =========================
-    // 1. MOBILE MENU TOGGLE
-    // =========================
-    const navContainer = document.querySelector(".nav-container");
-    const navLinks = document.querySelector(".nav-links");
+    // ==========================
+    // ENQUIRY FORM VALIDATION
+    // ==========================
+    const enquiryForm = document.getElementById("enquiryForm");
 
-    if (navContainer && navLinks) {
-        const hamburger = document.createElement("div");
-        hamburger.classList.add("hamburger");
-        hamburger.innerHTML = "☰";
-        navContainer.prepend(hamburger);
+    if (enquiryForm) {
+        enquiryForm.addEventListener("submit", function (e) {
 
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            hamburger.classList.toggle("open");
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const wigType = document.getElementById("wig-type").value;
+            const message = document.getElementById("message").value.trim();
+
+            if (!name) {
+                alert("Please enter your name.");
+                return e.preventDefault();
+            }
+
+            if (!email) {
+                alert("Please enter your email address.");
+                return e.preventDefault();
+            }
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return e.preventDefault();
+            }
+
+            if (!wigType) {
+                alert("Please select a wig type.");
+                return e.preventDefault();
+            }
+
+            if (!message) {
+                alert("Please enter your enquiry message.");
+                return e.preventDefault();
+            }
         });
     }
 
-    // =========================
-    // 2. ACTIVE LINK HIGHLIGHT
-    // =========================
-    const currentPage = window.location.pathname.split("/").pop();
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        const linkPage = link.getAttribute("href");
-
-        if (linkPage === currentPage) {
-            link.classList.add("active");
-        }
-    });
-
-    // =========================
-    // 3. PRODUCT FILTER (products.html)
-    // =========================
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const productCards = document.querySelectorAll(".product-card");
-
-    if (filterButtons.length > 0 && productCards.length > 0) {
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener("click", () => {
-
-                // remove active class
-                filterButtons.forEach(b => b.classList.remove("active"));
-                btn.classList.add("active");
-
-                const filter = btn.textContent.toLowerCase();
-
-                productCards.forEach(card => {
-                    const type = card.querySelector(".product-type")?.textContent.toLowerCase();
-
-                    if (filter === "all wigs") {
-                        card.style.display = "block";
-                    }
-                    else if (type && type.includes(filter.split(" ")[0])) {
-                        card.style.display = "block";
-                    }
-                    else {
-                        card.style.display = "none";
-                    }
-                });
-            });
-        });
-    }
-
-    // =========================
-    // 4. CONTACT FORM HANDLING
-    // =========================
-    const contactForm = document.querySelector(".contact-form");
+    // ==========================
+    // CONTACT FORM VALIDATION
+    // ==========================
+    const contactForm = document.getElementById("contactForm");
 
     if (contactForm) {
         contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
 
-            const submitBtn = contactForm.querySelector("button[type='submit']");
-            const originalText = submitBtn.textContent;
+            const name =
+                contactForm.querySelector('input[name="name"]').value.trim();
 
-            submitBtn.textContent = "Sending...";
-            submitBtn.disabled = true;
+            const email =
+                contactForm.querySelector('input[name="email"]').value.trim();
 
-            setTimeout(() => {
-                alert("Message sent successfully! We will get back to you soon.");
-                contactForm.reset();
+            const message =
+                contactForm.querySelector('textarea[name="message"]').value.trim();
 
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1200);
+            if (!name) {
+                alert("Please enter your full name.");
+                return e.preventDefault();
+            }
+
+            if (!email) {
+                alert("Please enter your email address.");
+                return e.preventDefault();
+            }
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return e.preventDefault();
+            }
+
+            if (!message) {
+                alert("Please enter your message.");
+                return e.preventDefault();
+            }
+
+            alert("Thank you! Your message has been sent.");
         });
     }
-
-    // =========================
-    // 5. SMOOTH SCROLL (optional UX improvement)
-    // =========================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
 
 });
